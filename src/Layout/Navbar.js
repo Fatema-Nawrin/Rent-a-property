@@ -16,7 +16,7 @@ const Navbar = () => {
                         <li><a href="/">Resources</a></li>
                     </ul>
                 </div>
-                <h2 className="font-medium px-2 text-2xl lg:p-4">Estatery</h2>
+                <h2 className="font-medium px-2 text-2xl lg:text-3xl lg:p-4">Estatery</h2>
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><a href="/">Rent</a></li>
@@ -29,8 +29,8 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <button className='btn bg-white text-violet-600 border-violet-600 mr-4'>Login</button>
-                <button className='btn  text-white bg-violet-600 border-violet-600'>Sign up</button>
+                <button className='btn btn-sm h-10 bg-white text-violet-600 border-violet-600 mr-4'>Login</button>
+                <button className='btn btn-sm h-10 text-white bg-violet-600 border-violet-600'>Sign up</button>
             </div>
 
         </div>
