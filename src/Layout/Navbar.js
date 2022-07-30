@@ -1,3 +1,5 @@
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 const Navbar = () => {
@@ -16,7 +18,7 @@ const Navbar = () => {
                         <li><a href="/">Resources</a></li>
                     </ul>
                 </div>
-                <h2 className="font-medium px-2 text-2xl lg:text-3xl lg:p-4">Estatery</h2>
+                <h2 className="font-medium px-2 text-2xl lg:text-3xl lg:p-4"><FontAwesomeIcon className='text-violet-500 pr-2' icon={faHome}></FontAwesomeIcon>Estatery</h2>
                 <div className="hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li><a href="/">Rent</a></li>

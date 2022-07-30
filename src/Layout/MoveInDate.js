@@ -26,7 +26,7 @@ const DateFixed = ({ month, setMonth }) => {
     return (
         <div>
             <label className="label">
-                <span className="label-text pl-2 m-1">Move in Date</span>
+                <span className="label-text pl-2 m-1 ">Move in Date</span>
             </label>
             <button className='border border-violet-600 rounded-lg bg-base-100 w-24 md:w-36 text-gray-800 h-12 font-semibold' onClick={showCalender}>{month ? month : 'When'}
                 <FontAwesomeIcon icon={faCalendar} className="pl-6"></FontAwesomeIcon> </button>

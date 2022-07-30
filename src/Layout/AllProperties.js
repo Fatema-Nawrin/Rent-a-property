@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import DateFixed from './DateFixed';
+import MoveInDate from './MoveInDate';
 import ListedProperties from './ListedProperties';
+
 
 const AllProperties = () => {
     const [properties, setProperties] = useState([])
@@ -15,16 +16,20 @@ const AllProperties = () => {
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
     const [filterdProperties, setFilteredProperties] = useState([]);
-
     const handleSelect = (location, type, month, price) => {
-        const listedProperties = properties.filter(property => { return property.location === location && property.type === type && property.month === month })
-        if (price === "low") {
-            const final = listedProperties.filter(property => property.price < 2500)
-            setFilteredProperties(final);
+        if (location === "" || type == "" || month == "" || price == "") {
+            alert('Please, select from all filter.')
         }
         else {
-            const final = listedProperties.filter(property => property.price > 2500)
-            setFilteredProperties(final);
+            const listedProperties = properties.filter(property => { return property.location === location && property.type === type && property.month === month })
+            if (price === "low") {
+                const final = listedProperties.filter(property => property.price < 2500)
+                setFilteredProperties(final);
+            }
+            else if (price === "high") {
+                const final = listedProperties.filter(property => property.price > 2500)
+                setFilteredProperties(final);
+            }
         }
     }
 
@@ -42,8 +47,10 @@ const AllProperties = () => {
                         <option value="New York">New York</option>
                     </select>
                 </div>
-                <DateFixed month={month}
-                    setMonth={setMonth}></DateFixed>
+                <MoveInDate month={month}
+                    setMonth={setMonth}>
+                </MoveInDate>
+
                 <div>
                     <label className="label">
                         <span className="label-text pl-2">Property Type</span>
@@ -54,6 +61,7 @@ const AllProperties = () => {
                         <option value="apartment">Apartment</option>
                     </select>
                 </div>
+
                 <div>
                     <label className="label">
                         <span className="label-text pl-2">Price</span>
