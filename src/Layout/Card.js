@@ -1,4 +1,4 @@
-import { faBath, faBed, faSquare } from '@fortawesome/free-solid-svg-icons';
+import { faBath, faBed } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
