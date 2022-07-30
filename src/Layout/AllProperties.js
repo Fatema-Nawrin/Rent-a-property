@@ -17,7 +17,7 @@ const AllProperties = () => {
     const [price, setPrice] = useState("");
     const [filterdProperties, setFilteredProperties] = useState([]);
     const handleSelect = (location, type, month, price) => {
-        if (location === "" || type == "" || month == "" || price == "") {
+        if (location === "" || type === "" || month === "" || price === "") {
             alert('Please, select from all filter.')
         }
         else {
@@ -34,7 +34,7 @@ const AllProperties = () => {
     }
 
     return (
-        <div className="w-10/12 mx-auto">
+        <div className="w-11/12 md:w-10/12 mx-auto">
             <h1 className='text-2xl lg:text-4xl font-bold py-5' >Search properties to rent</h1>
             <div className='my-6 py-2 flex-wrap flex justify-center bg-base-100'>
                 <div>
@@ -73,7 +73,7 @@ const AllProperties = () => {
                     </select>
                 </div>
 
-                <button className='btn border-0 lg:mx-3 lg:px-6 bg-violet-600 mt-11' onClick={() => handleSelect(location, type, month, price)}>Select</button>
+                <button className='btn border-0 lg:mx-3 lg:px-6 bg-violet-500 mt-11' onClick={() => handleSelect(location, type, month, price)}>Select</button>
             </div>
 
             <ListedProperties
