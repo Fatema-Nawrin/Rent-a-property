@@ -16,26 +16,32 @@ const AllProperties = () => {
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
     const [filterdProperties, setFilteredProperties] = useState([]);
+
     const handleSelect = (location, type, month, price) => {
         if (location === "" || type === "" || month === "" || price === "") {
             alert('Please, select from all filter.')
         }
         else {
             const listedProperties = properties.filter(property => { return property.location === location && property.type === type && property.month === month })
+            // price filtering
             if (price === "low") {
-                const final = listedProperties.filter(property => property.price < 2500)
-                setFilteredProperties(final);
+                const finalFilterd = listedProperties.filter(property => property.price < 2500)
+                setFilteredProperties(finalFilterd);
             }
-            else if (price === "high") {
-                const final = listedProperties.filter(property => property.price > 2500)
-                setFilteredProperties(final);
+            else {
+                const finalFilterd = listedProperties.filter(property => property.price > 2500)
+                setFilteredProperties(finalFilterd);
             }
         }
     }
 
     return (
         <div className="w-11/12 md:w-10/12 mx-auto">
-            <h1 className='text-2xl lg:text-4xl font-bold py-5' >Search properties to rent</h1>
+            <div className='flex flex-wrap justify-between '>
+                <h1 className='text-2xl lg:text-4xl font-bold py-5' >Search properties to rent</h1>
+                <input type="text" placeholder="Search here" className="input input-bordered w-1/2 max-w-xs my-5" />
+            </div>
+
             <div className='my-6 py-2 flex-wrap flex justify-center bg-base-100'>
                 <div>
                     <label className="label">
@@ -47,6 +53,7 @@ const AllProperties = () => {
                         <option value="New York">New York</option>
                     </select>
                 </div>
+                {/* move in date option */}
                 <MoveInDate month={month}
                     setMonth={setMonth}>
                 </MoveInDate>

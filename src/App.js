@@ -1,13 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Footer from './Shared/Footer';
 import Home from './Layout/Home';
-import Footer from './Layout/Footer';
+import Navbar from './Shared/Navbar';
+
 
 function App() {
   return (
     <div>
-      <Home />
-      <Footer />
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+      </Routes>
+      <Footer></Footer>
+
     </div>
   );
 }

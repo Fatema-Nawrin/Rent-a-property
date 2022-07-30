@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import PropertyCard from './PropertyCard';
 
 const ListedProperties = ({ properties, filterdProperties }) => {
     return (
@@ -7,14 +7,14 @@ const ListedProperties = ({ properties, filterdProperties }) => {
             <div className='pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-6 lg:mx-0 lg:gap-6'>
                 {filterdProperties.length === 0
                     ?
-                    properties.map(property => <Card
+                    properties.map(property => <PropertyCard
                         key={property.id}
                         property={property}
-                    ></Card>)
+                    ></PropertyCard>)
                     :
-                    filterdProperties.map(property => <Card
+                    filterdProperties.map(property => <PropertyCard
                         key={property.id}
-                        property={property}></Card>)
+                        property={property}></PropertyCard>)
                 }
             </div>
         </div>

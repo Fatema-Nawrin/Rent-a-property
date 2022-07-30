@@ -2,7 +2,7 @@ import { faBath, faBed, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-const Card = ({ property }) => {
+const PropertyCard = ({ property }) => {
     const { name, price, img, id, address, bed, bathroom } = property;
     return (
         <div>
@@ -13,6 +13,7 @@ const Card = ({ property }) => {
                         <p className=' text-gray-400'><span className='text-xl lg:text-2xl text-violet-600 font-bold'>${price}</span>/<small>month</small></p>
                         <FontAwesomeIcon icon={faHeart} className="text-violet-400"></FontAwesomeIcon>
                     </div>
+
                     <h2 className="card-title">{name}</h2>
                     <p className='text-gray-400 font-medium'>{address}</p>
                     <hr className='bg-gray-300 ' />
@@ -24,4 +25,4 @@ const Card = ({ property }) => {
     );
 };
 
-export default Card;
+export default PropertyCard;
